@@ -52,4 +52,4 @@ export {
 } from './schemas/dashboard.schema';
 
 // Utils
-export { toPaisa, toPaise, toRupees, formatPKR, formatINR } from './utils/currency';
+export { toPaisa, toRupees, formatPKR } from './utils/currency';

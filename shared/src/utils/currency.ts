@@ -8,6 +8,3 @@ export const toRupees = (paisa: number): number => paisa / 100;
 export const formatPKR = (paisa: number): string =>
   `Rs. ${toRupees(paisa).toLocaleString('en-PK', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
-// Backward-compatible aliases
-export const toPaise = toPaisa;
-export const formatINR = formatPKR;
