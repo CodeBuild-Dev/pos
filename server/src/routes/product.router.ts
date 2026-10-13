@@ -1,4 +1,3 @@
-import { z } from 'zod';
 import { router, protectedProcedure } from '../trpc';
 import {
   createProductSchema,
@@ -12,18 +11,6 @@ export const productRouter = router({
   list: protectedProcedure.input(listProductsSchema).query(async ({ input }) => {
     return productService.list(input);
   }),
-
-  getById: protectedProcedure
-    .input(z.object({ id: z.string().uuid() }))
-    .query(async ({ input }) => {
-      return productService.getById(input.id);
-    }),
-
-  getByBarcode: protectedProcedure
-    .input(z.object({ barcode: z.string().min(1) }))
-    .query(async ({ input }) => {
-      return productService.getByBarcode(input.barcode);
-    }),
 
   create: protectedProcedure.input(createProductSchema).mutation(async ({ ctx, input }) => {
     requireRole('admin', 'salesperson')(ctx.user.role);

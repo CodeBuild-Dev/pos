@@ -1,6 +1,6 @@
-import { eq, or, and, like, lt, sql } from 'drizzle-orm';
+import { eq, or, and, like, lt } from 'drizzle-orm';
 import { db } from '../db';
-import { products, categories } from '../db/schema';
+import { products } from '../db/schema';
 import { auditService } from './audit.service';
 
 interface ProductListInput {

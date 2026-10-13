@@ -73,7 +73,7 @@ export const dashboardService = {
         sales: sql<number>`cast(coalesce(sum(${sales.total}), 0) as int)`,
       })
       .from(sales)
-      .where(sql`${sales.createdAt} >= now() - interval ${interval}`)
+      .where(sql`${sales.createdAt} >= now() - ${interval}::interval`)
       .groupBy(groupExpr)
       .orderBy(groupExpr);
 
@@ -93,7 +93,7 @@ export const dashboardService = {
       .innerJoin(sales, eq(saleItems.saleId, sales.id))
       .innerJoin(products, eq(saleItems.productId, products.id))
       .innerJoin(categories, eq(products.categoryId, categories.id))
-      .where(sql`${sales.createdAt} >= now() - interval ${interval}`)
+      .where(sql`${sales.createdAt} >= now() - ${interval}::interval`)
       .groupBy(categories.id, categories.name)
       .orderBy(sql`sum(${saleItems.total}) desc`);
 

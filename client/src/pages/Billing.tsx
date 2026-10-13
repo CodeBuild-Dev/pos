@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useToast } from "@/hooks/use-toast";
 import { trpc } from "@/lib/trpc";
-import { formatPKR, toPaisa, toRupees } from "@shoppos/shared";
+import { formatPKR } from "@shoppos/shared";
 import { BarcodeScanner } from "@/components/BarcodeScanner";
 import {
   Select,

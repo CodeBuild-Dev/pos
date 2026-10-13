@@ -1,4 +1,4 @@
-import { eq, and, or, like, sql, desc, gte, lte } from 'drizzle-orm';
+import { eq, and, or, like, desc, gte, lte } from 'drizzle-orm';
 import { db } from '../db';
 import { sales, saleItems, products, customers, users } from '../db/schema';
 import { auditService } from './audit.service';

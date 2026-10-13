@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
-import { eq, ne, desc } from 'drizzle-orm';
+import { eq, desc } from 'drizzle-orm';
 import { db } from '../db';
 import { users } from '../db/schema';
 import { auditService } from './audit.service';
