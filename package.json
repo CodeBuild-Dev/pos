@@ -1,0 +1,19 @@
+{
+  "name": "shop-pos",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n client,server -c blue,green \"pnpm --filter @shoppos/client dev\" \"pnpm --filter @shoppos/server dev\"",
+    "build": "pnpm --filter @shoppos/client build",
+    "start": "pnpm --filter @shoppos/server start",
+    "lint": "pnpm --filter @shoppos/client lint",
+    "test": "pnpm --filter @shoppos/client test",
+    "db:generate": "pnpm --filter @shoppos/server db:generate",
+    "db:migrate": "pnpm --filter @shoppos/server db:migrate",
+    "db:seed": "pnpm --filter @shoppos/server db:seed",
+    "db:studio": "pnpm --filter @shoppos/server db:studio"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "typescript": "^5.8.3"
+  }
+}
